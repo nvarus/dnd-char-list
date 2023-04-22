@@ -16,3 +16,7 @@ function createAjaxObject() {
 	return ajax;
 }
 const ajax = createAjaxObject();
+
+function editChar(idChar) {
+	console.log(`ID персонажа ${idChar}`)
+}
