@@ -29,29 +29,25 @@
 		<th>КД</th>
 		<th>Скорость</th>
 		<th>Инициатива</th>
-		<th>hp тек/макс</th>
+		<th>hp тек</th>
+		<th>hp макс</th>
 		<th>Возраст</th>
+		<th>Edit</th>
+		<th>Delete</th>
 	</tr>
 	<?php
-	require_once "./src/php/Connect.php";
-	$char_list = mysqli_query($connect, "SELECT * FROM `Hero_prop`");
-	$char_list = mysqli_fetch_all($char_list);
-	
-	
-	foreach ($char_list as $item) { ?>
-		<tr>
-			<td> <?= $item[0] ?></td>
-			<td> <?= $item[1] ?></td>
-			<td> <?= $item[2] ?></td>
-			<td> <?= $item[3] ?></td>
-			<td> <?= $item[4] ?></td>
-			<td> <?= $item[5] ?></td>
-			<td> <?= $item[6] ?></td>
-			<td> <?= $item[7] ?></td>
-			<td> <?= $item[8]. ' / '.$item[9] ?></td>
-			<td> <?= $item[10] ?></td>
-			<td> <button><a href='../src/php/edit_form.php?id=<?=$item[0]?>'>edit</a></button></td>
-			<td> <button><a href='../src/php/edit_form.php?id=<?=$item[0]?>'>del</a></button></td>
-		</tr>
-	<?php } ?>
-</table>
+	include_once "./src/php/Character.php";
+	// получаем список персонажей
+	$character_list = $char_db->select('*', 'Hero_prop');
+	foreach ($character_list as $row) {
+		echo "<tr>";
+		foreach ($row as $item) {
+			echo "<td>$item</td>";
+		}
+		echo "<td><button><a href='../src/php/edit_form.php?id=$row[0]'>edit</a></button></td>";
+		echo "<td><button><a href='../src/php/edit_form.php?id=$row[0]'>delete</a></button></td>";
+		echo "</tr>";
+	}
+	echo "</table>";
+	?>
+

@@ -16,7 +16,8 @@
     <div class="content">
     <?php
     // таблица персонажей с table.php
-      include_once "./src/php/table.php"
+      include_once "./src/php/table.php";
+    
     ?>
     </div>
   </body>
