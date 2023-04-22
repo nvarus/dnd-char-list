@@ -1,2 +1,7 @@
 @charset "UTF-8";
+input {
+  font-size: 25px; }
+  input::placeholder {
+    color: crimson; }
+
 /*----------------------МЕДИА ЗАПРСЫ----------------------- */
