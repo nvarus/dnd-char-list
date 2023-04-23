@@ -1,6 +1,7 @@
 <?php
-
-class Character
+/**
+ * Обработчик базы данных */
+class DatabaseHandler
 {
 	private string $username;
 	private string $password;
@@ -69,6 +70,6 @@ class Character
 }
 
 // подключаемся к БД
-$char_db = new Character('root', '', 'Char_List');
+$db_Char_List = new DatabaseHandler('root', '', 'Char_List');
 
 

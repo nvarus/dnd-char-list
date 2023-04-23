@@ -36,9 +36,9 @@
 		<th>Delete</th>
 	</tr>
 	<?php
-	include_once "./src/php/Character.php";
+	include_once "./src/php/DatabaseHandler.php";
 	// получаем список персонажей
-	$character_list = $char_db->select('*', 'Hero_prop');
+	$character_list = $db_Char_List->select('*', 'Hero_prop');
 	foreach ($character_list as $row) {
 		echo "<tr>";
 		foreach ($row as $item) {
