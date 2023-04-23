@@ -1,5 +1,5 @@
 <?php
-include_once "../Character.php";
+include_once "../DatabaseHandler.php";
 
 if(isset($_POST['char-name'])) {
 	$db_Char_List->create('Hero_prop',
