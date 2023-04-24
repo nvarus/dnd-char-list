@@ -18,7 +18,7 @@
     // таблица персонажей с table.php
       include_once "./src/php/table.php";
     
-		include_once "./src/php/create/create-char-form.php"
+		include_once "./src/php/create/create-char-form.php";
     ?>
     </div>
   </body>
