@@ -44,7 +44,7 @@
 		foreach ($row as $item) {
 			echo "<td>$item</td>";
 		}
-		echo "<td><button><a href='../src/php/edit_form.php?id=$row[0]'>edit</a></button></td>";
+		echo "<td><button><a href='../src/php/update/update-char-form.php?id=$row[0]'>edit</a></button></td>";
 		echo "<td><button><a href='../src/php/edit_form.php?id=$row[0]'>delete</a></button></td>";
 		echo "</tr>";
 	}

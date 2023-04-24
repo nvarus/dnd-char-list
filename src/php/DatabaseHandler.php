@@ -31,14 +31,16 @@ class DatabaseHandler
 	 * Получение данных их SQL таблицы
 	 * @param string $what Выбрать поля таблицы (* - все)
 	 * @param string $from Имя таблицы
+	 * @param string $where Условие (выражение db_value = $variable)
+	 * @param string $order Сортировка
 	 * @return array
 	 */
-	public function select(string $what, string $from): array
+	public function select(string $what, string $from, string $where = null, string $order = null): array
 	{
 		$sql = 'SELECT ' . $what . ' FROM ' . $from; // текст SQL запроса
 		
-		// todo тут добавить WHERE
-		// todo тут добавить ORDER BY
+		if($where <> null) $sql .= ' WHERE '.$where;
+		if($order <> null) $sql .= ' ORDER BY '.$order;
 		
 		$query = mysqli_query($this->connect, $sql);
 		return mysqli_fetch_all($query);
