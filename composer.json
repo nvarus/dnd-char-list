@@ -1,0 +1,17 @@
+{
+    "name": "alx/dnd-character-cheet",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App"
+        }
+    },
+    "authors": [
+        {
+            "name": "nvarus",
+            "email": "varyukhin.alx@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-mysqli": "*"
+    }
+}

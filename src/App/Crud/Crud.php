@@ -1,12 +1,13 @@
 <?php
-/**
- * Обработчик базы данных */
-class DatabaseHandler
+
+namespace App\Crud;
+
+class Crud
 {
-	private string $username;
-	private string $password;
-	private string $database;
-	private mysqli $connect;
+	public string $username;
+	public string $password;
+	public string $database;
+	public $connect;
 	
 	function __construct($username, $password, $database)
 	{
@@ -39,8 +40,8 @@ class DatabaseHandler
 	{
 		$sql = 'SELECT ' . $what . ' FROM ' . $from; // текст SQL запроса
 		
-		if($where <> null) $sql .= ' WHERE '.$where;
-		if($order <> null) $sql .= ' ORDER BY '.$order;
+		if ($where <> null) $sql .= ' WHERE ' . $where;
+		if ($order <> null) $sql .= ' ORDER BY ' . $order;
 		
 		$query = mysqli_query($this->connect, $sql);
 		return mysqli_fetch_all($query);
@@ -70,8 +71,3 @@ class DatabaseHandler
 		return (bool)$ins;
 	}
 }
-
-// подключаемся к БД
-$db_Char_List = new DatabaseHandler('root', '', 'Char_List');
-
-
